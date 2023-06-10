@@ -6,8 +6,7 @@ let livros = [];
 async function getBuscarLivos() {
 	const res = await fetch(endpointDaAPI);
 	livros = await res.json();
-	console.table(livros);
-	return livros;
+	livros.forEach((livro) => console.table(livro));
 }
 
 getBuscarLivos();
