@@ -6,8 +6,10 @@ let livros = [];
 async function getBuscarLivos() {
 	const res = await fetch(endpointDaAPI);
 	livros = await res.json();
+	let livroComDesconto = aplicarDesconto(livros);
+	exibeLivrosNaTela(livroComDesconto);
 	console.table(livros);
-	exibeLivrosNaTela(livros);
+	console.table(livroComDesconto);
 }
 
 getBuscarLivos();
