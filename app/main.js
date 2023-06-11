@@ -8,8 +8,6 @@ async function getBuscarLivos() {
 	livros = await res.json();
 	let livroComDesconto = aplicarDesconto(livros);
 	exibeLivrosNaTela(livroComDesconto);
-	console.table(livros);
-	console.table(livroComDesconto);
 }
 
 getBuscarLivos();
