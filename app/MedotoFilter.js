@@ -8,6 +8,9 @@ buttonsFilter.forEach((buttonFilter) => {
 });
 
 function filtrarLivros(categoria) {
-	let livrosFiltrados = livros.filter((livro) => livro.categoria === categoria);
+	let livrosFiltrados =
+		categoria == 'disponiveis'
+			? livros.filter((livro) => livro.quantidade > 0)
+			: livros.filter((livro) => livro.categoria === categoria);
 	exibeLivrosNaTela(livrosFiltrados);
 }
